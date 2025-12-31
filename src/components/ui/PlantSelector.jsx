@@ -46,9 +46,9 @@ const PlantSelector = ({ plants, activePlant, setActivePlant }) => {
                     <img
                         src={currentPlant.image}
                         alt={currentPlant.name}
-                        className="w-full h-full object-cover opacity-20"
+                        className="w-full h-full object-cover opacity-50"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-stone-900/90 via-stone-900/80 to-stone-900/70"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-stone-900/60 via-stone-900/50 to-stone-900/40"></div>
                 </div>
 
                 <div className="absolute top-0 right-0 p-8 opacity-10 z-10">
