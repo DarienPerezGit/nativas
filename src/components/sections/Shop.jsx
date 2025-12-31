@@ -1,12 +1,21 @@
 import React from 'react';
 import KraftPouch from '../products/KraftPouch';
 import { shopProducts } from '../../data/products';
+import { useScrollAnimation } from '../../utils/hooks';
 
 const Shop = () => {
+    const [titleRef, titleVisible] = useScrollAnimation();
+    const [productsRef, productsVisible] = useScrollAnimation();
+    const [infoRef, infoVisible] = useScrollAnimation();
+
     return (
         <section id="coleccion" className="py-24 px-6 bg-[#f0f0f0]" style={{ backgroundImage: 'radial-gradient(#e0e0e0 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
             <div className="container mx-auto">
-                <div className="text-center mb-16">
+                <div
+                    ref={titleRef}
+                    className={`text-center mb-16 transition-all duration-1000 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                        }`}
+                >
                     <h2 className="text-5xl font-serif text-stone-900 mb-4">Botica Premium</h2>
                     <p className="text-stone-600 font-light max-w-2xl mx-auto">
                         Ediciones limitadas en envases Doypack Kraft con Hot Stamping dorado.
@@ -15,9 +24,19 @@ const Shop = () => {
                 </div>
 
                 {/* Grid de 3 Productos con Diseño Alquimia */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto mb-16">
-                    {shopProducts.map(product => (
-                        <KraftPouch key={product.id} product={product} />
+                <div
+                    ref={productsRef}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto mb-16"
+                >
+                    {shopProducts.map((product, index) => (
+                        <div
+                            key={product.id}
+                            className={`transition-all duration-1000 ${productsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                                }`}
+                            style={{ transitionDelay: `${index * 150}ms` }}
+                        >
+                            <KraftPouch product={product} />
+                        </div>
                     ))}
                 </div>
 

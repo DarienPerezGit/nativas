@@ -5,11 +5,11 @@ import { ProductPropType } from '../../utils/propTypes';
 const KraftPouch = ({ product }) => {
     return (
         <div className="flex flex-col items-center">
-            <div className="relative group mb-6">
+            <div className="relative group mb-6 hover-lift cursor-pointer">
                 {/* Sombra proyectada en el suelo */}
-                <div className="absolute -bottom-4 left-4 right-4 h-6 bg-black opacity-20 blur-xl rounded-[50%]"></div>
+                <div className="absolute -bottom-4 left-4 right-4 h-6 bg-black opacity-20 blur-xl rounded-[50%] transition-all duration-300 group-hover:opacity-30 group-hover:blur-2xl"></div>
 
-                <div className="kraft-pouch w-[340px] h-[520px] rounded-lg flex flex-col relative">
+                <div className="kraft-pouch w-[340px] h-[520px] rounded-lg flex flex-col relative transition-transform duration-300">
                     {/* Capas de Realismo */}
                     <div className="volume-overlay"></div>
                     <div className="wrinkles"></div>
