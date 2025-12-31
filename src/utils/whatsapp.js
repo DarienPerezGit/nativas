@@ -1,6 +1,6 @@
-// TU NÚMERO DE WHATSAPP (Reemplázalo con el tuyo real en formato internacional)
-// Ejemplo: 5493482123456 (54 Argentina, 9 móvil, código de área sin 0, número sin 15)
-export const PHONE_NUMBER = "5491112345678";
+// TU NÚMERO DE WHATSAPP (Formato internacional)
+// 549 (Argentina móvil) + código de área sin 0 + número sin 15
+export const PHONE_NUMBER = "5493482206280";
 
 /**
  * Genera un link de WhatsApp con un mensaje pre-cargado
